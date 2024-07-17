@@ -1,16 +1,16 @@
 from keras.models import Sequential
 from keras.utils import to_categorical
-from keras.datasets import mnist
+from keras.datasets import cifar10
 from keras.layers import Dense
 from keras.optimizers import SGD, Adam
 import matplotlib.pyplot as plt
 from keras.callbacks import ModelCheckpoint
 
 #load dataset
-(x_train,y_train), (x_test,y_test) = mnist.load_data()
+(x_train,y_train), (x_test,y_test) = cifar10.load_data()
 #print(x_train.shape)
-x_train= x_train.reshape(x_train.shape[0],784)
-x_test=x_test.reshape(x_test.shape[0],784)
+x_train= x_train.reshape(x_train.shape[0],32*32*3)
+x_test=x_test.reshape(x_test.shape[0],32*32*3)
 y_train=to_categorical(y_train)
 y_test=to_categorical(y_test)
 #print(type(y_train[0]))

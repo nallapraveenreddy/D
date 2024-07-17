@@ -33,7 +33,7 @@ lin_reg.fit(X_train, y_train)
 # Predict and evaluate
 y_pred_lin = lin_reg.predict(X_test)
 mse_lin = mean_squared_error(y_test, y_pred_lin)
-print(f'Linear Regression MSE: {mse_lin}')
+print('Linear Regression MSE: ' + str(mse_lin))
 
 from sklearn.ensemble import RandomForestRegressor
 

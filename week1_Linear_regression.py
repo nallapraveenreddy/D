@@ -5,12 +5,6 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import SGD
 
-# from sklearn.metrics import mean_squared_error
-# from keras.optimizers import Adam
-# from keras.models import Sequential
-# from keras.layers import Dense
-
-
 #Generate Synthetic data
 
 np.random.seed(42)
@@ -30,13 +24,13 @@ model.compile(optimizer = SGD(learning_rate = 0.1),loss = 'mean_squared_error')
 model.fit(X,y, epochs = 100)
 
 # make predictions
-op = model.predict(X)
+output = model.predict(X)
 
 # Plot
 # mse = mean_squared_error(y, op)
 # print(mse)
 plt.scatter(X,y,label = 'Original Data')
-plt.plot(X,op,color = 'y',label = 'predicted data')
+plt.plot(X,output,color = 'y',label = 'predicted data')
 plt.xlabel('X values')
 plt.ylabel('Y values')
 plt.legend()

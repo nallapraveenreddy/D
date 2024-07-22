@@ -8,7 +8,7 @@ from keras.callbacks import ModelCheckpoint
 
 #load dataset
 (x_train,y_train), (x_test,y_test) = mnist.load_data()
-#print(x_train.shape)
+print(x_train.shape)
 x_train= x_train.reshape(x_train.shape[0],784)
 x_test=x_test.reshape(x_test.shape[0],784)
 y_train=to_categorical(y_train)
